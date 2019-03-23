@@ -1,0 +1,52 @@
+{
+	"WebUI": {
+		"title": "ShepardsPi",
+		"version": "0.0.3",
+		"slogan": "Digital Cloak"
+	},
+	"Hotspot": {
+		"ssid": "ShepardsPi",
+		"key": "SHEPARDSPI"
+	},
+	"Database": {
+		"uri": "mysql://sheep:sheep@localhost/sheep",
+		"logging": false
+	},
+	"AppServer": {
+		"port": 80,
+		"httpsPort": 443,
+		"gridConfig": "./gridConf/grid.json",
+		"debug": false,
+		"static": "static",
+		"templates": "templates",
+		"images": "images"
+	},
+	"Monitoring": {
+		"interface": "wlo1",
+		"Driftnet": {
+			"autostart": false,
+			"tmp": "/tmp/ShepardsPi/driftnet",
+			"nsfw_filter": true
+		},
+		"TShark": {
+			"autostart": true
+		},
+		"NGrep": {
+			"autostart": true,
+			"nsfw_filter": true
+		},
+		"Airmon": {
+			"interface": "wlan1",
+			"autostart": false,
+			"interval": 5
+		},
+		"Ettercap": {
+			"autostart": true
+		},
+		"Nmap": {
+			"autostart": true,
+			"interval": 30000,
+			"target_range": "192.168.1.0-100"
+		}
+	}
+}

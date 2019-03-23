@@ -1,0 +1,79 @@
+- var title1 = "Sniffed Accounts"
+- var title2 = "Network Hosts"
+- var title3 = "Wireless Networks"
+- var title4 = "Network Statistics"
+- var title5 = "Sniffed Images"
+- var title6 = "External Profile (OSINT)"
+
+head
+  script(src='/static/js/jquery.min.js')
+  script(src='/static/js/jquery-ui.js')
+  script(src='/static/js/lodash.min.js')
+  script(src='/static/js/gridstack.all.js')
+  script(src='/static/js/bootstrap.min.js')
+  script(src='/static/js/index.js')
+  script(src='/static/js/shepard.js')
+  link(rel='stylesheet', href='/static/css/bootstrap.css')
+  link(rel='stylesheet', href='/static/css/gridstack.css')
+  link(rel='stylesheet', href='/static/css/style.css')
+
+body
+  ul.sidebar
+    li Shepards Pi Settings
+    li Parser Settings
+    li Toggle #{title1}
+    li Toggle #{title2}
+    li Toggle #{title3}
+    li Toggle #{title4}
+    li Toggle #{title5} 
+    li Toggle #{title6}
+  input#sidebar-btn.sidebar-btn(type='checkbox' unchecked)
+  label(for='sidebar-btn')
+  
+  .container
+    .row
+      .col-sm-12
+        .h2 #{title}
+        .h5 v#{version} | Shepards Pi | Network analysis tool
+        img#icon(src="https://bit.ly/2SVHA7O")
+    .row
+      .grid-stack
+        .grid-stack-item#gs1(data-gs-x=E1.x data-gs-y=E1.y data-gs-width=E1.w data-gs-height=E1.h)
+          .grid-stack-item-content
+            .panel
+              .panel-title #{title1}
+              .panel-body
+                table#accounts-list.table
+        .grid-stack-item#gs2(data-gs-x=E2.x data-gs-y=E2.y data-gs-width=E2.w data-gs-height=E2.h)
+          .grid-stack-item-content
+            .panel
+              .panel-title #{title2}
+              .panel-body
+                table#network-hosts.table
+        .grid-stack-item#gs3(data-gs-x=E3.x data-gs-y=E3.y data-gs-width=E3.w data-gs-height=E3.h)
+          .grid-stack-item-content
+            .panel
+              .panel-title #{title3}
+              .panel-body
+                table#networks-list.table
+        .grid-stack-item#gs4(data-gs-x=E4.x data-gs-y=E4.y data-gs-width=E4.w data-gs-height=E4.h)
+          .grid-stack-item-content
+            .panel
+              .panel-title #{title4}
+              .panel-body
+                display()
+        
+        .grid-stack-item#gs5(data-gs-x=E5.x data-gs-y=E5.y data-gs-width=E5.w data-gs-height=E5.h)
+          .grid-stack-item-content
+            .panel
+              .panel-title #{title5}
+              .panel-body
+                div#images
+                
+        .grid-stack-item#gs6(data-gs-x="4" data-gs-y="5" data-gs-width="4" data-gs-height="5")
+          .grid-stack-item-content
+            .panel
+              .panel-title #{title6}
+              .panel-body
+                div#data
+display()

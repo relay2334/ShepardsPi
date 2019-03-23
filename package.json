@@ -1,0 +1,29 @@
+{
+  "name": "shepards-pi",
+  "version": "0.1.0",
+  "description": "A passive network sniffer built with Node, Express and Pug",
+  "main": "server.js",
+  "scripts": {
+    "start": "npx pm2 start server.js --watch"
+  },
+  "author": "Relay",
+  "license": "MIT",
+  "dependencies": {
+    "base64-img": "latest",
+    "config": "latest",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.5",
+    "pug": "^2.0.3",
+    "sequelize": "latest",
+    "async": "latest",
+    "httpreq": "latest",
+    "mv": "latest",
+    "md5": "latest",
+    "xml2js": "latest",
+    "socket.io": "latest"
+  },
+  "devDependencies": {
+    "pm2": "^2.10.3"
+  }
+}
