@@ -257,9 +257,9 @@ function display() {
 		hosts.push(host);
 	})
 	
-	socket.on('networks', function(network) {
-		networks.push(network);
-	})
+	//socket.on('networks', function(network) {
+	//	networks.push(network);
+	//})
 
 
 	$(document).ready(function () {
@@ -276,14 +276,14 @@ function display() {
 			hosts = host_list;
 			renderHostList();
 		});
-		$.getJSON('/networks/list', function(network_list) {
-			networks = network_list;
-			renderNetworkList();
-		});
+		//$.getJSON('/networks/list', function(network_list) {
+		//	networks = network_list;
+		//	renderNetworkList();
+		//});
 		protoRefresh();
 		setInterval(accountCycle, 1000);
 		setInterval(hostCycle, 1000);
-		setInterval(networkCycle, 1000);
+		//setInterval(networkCycle, 1000);
 	})
 }
 

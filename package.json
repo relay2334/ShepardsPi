@@ -9,19 +9,19 @@
   "author": "Relay",
   "license": "MIT",
   "dependencies": {
+    "async": "latest",
     "base64-img": "latest",
     "config": "latest",
     "express": "^4.16.4",
+    "httpreq": "latest",
+    "md5": "latest",
+    "mv": "latest",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.5",
     "pug": "^2.0.3",
     "sequelize": "latest",
-    "async": "latest",
-    "httpreq": "latest",
-    "mv": "latest",
-    "md5": "latest",
-    "xml2js": "latest",
-    "socket.io": "latest"
+    "socket.io": "latest",
+    "xml2js": "latest"
   },
   "devDependencies": {
     "pm2": "^2.10.3"
