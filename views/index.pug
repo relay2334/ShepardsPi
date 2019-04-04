@@ -8,11 +8,14 @@
 head
   script(src='/static/js/jquery.min.js')
   script(src='/static/js/jquery-ui.js')
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.time.min.js")
   script(src='/static/js/lodash.min.js')
   script(src='/static/js/gridstack.all.js')
   script(src='/static/js/bootstrap.min.js')
   script(src='/static/js/index.js')
   script(src="/socket.io/socket.io.js")
+  script(src="/static/js/string.js")
   script(src='/static/js/shepard.js')
   link(rel='stylesheet', href='/static/css/bootstrap.css')
   link(rel='stylesheet', href='/static/css/gridstack.css')
@@ -45,6 +48,7 @@ body
               .panel-title #{title1}
               .panel-body
                 table#accounts-list.table
+                  tbody
         .grid-stack-item#gs2(data-gs-x=E2.x data-gs-y=E2.y data-gs-width=E2.w data-gs-height=E2.h)
           .grid-stack-item-content
             .panel

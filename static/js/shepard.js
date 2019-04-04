@@ -239,9 +239,9 @@ function report() {
 
 
 function display() {
-	socket.on('images', function(image) {
-		addImage(image);
-	})
+	//socket.on('images', function(image) {
+	//	addImage(image);
+	//})
 
 
 	socket.on('accounts', function(account) {
@@ -249,13 +249,13 @@ function display() {
 	})
 
 
-	socket.on('protocols', function(data){
-		protoRefresh();
-	})
+	//socket.on('protocols', function(data){
+	//	protoRefresh();
+	//})
 
-	socket.on('hosts', function(host) {
-		hosts.push(host);
-	})
+	//socket.on('hosts', function(host) {
+	//	hosts.push(host);
+	//})
 	
 	//socket.on('networks', function(network) {
 	//	networks.push(network);
@@ -263,26 +263,26 @@ function display() {
 
 
 	$(document).ready(function () {
-		$.getJSON('/images/list', function(images) {
-			$.each(images, function(key, image) {
-				addImage(image);
-			})
-		});
+		//$.getJSON('/images/list', function(images) {
+		//	$.each(images, function(key, image) {
+		//		addImage(image);
+		//	})
+		//});
 		$.getJSON('/accounts/list', function(account_list) {
 			accounts = account_list;
 			renderAccountList();
 		});
-		$.getJSON('/hosts/list', function(host_list) {
-			hosts = host_list;
-			renderHostList();
-		});
+		//$.getJSON('/hosts/list', function(host_list) {
+		//	hosts = host_list;
+		//	renderHostList();
+		//});
 		//$.getJSON('/networks/list', function(network_list) {
 		//	networks = network_list;
 		//	renderNetworkList();
 		//});
-		protoRefresh();
-		setInterval(accountCycle, 1000);
-		setInterval(hostCycle, 1000);
+		//protoRefresh();
+		//setInterval(accountCycle, 1000);
+		//setInterval(hostCycle, 1000);
 		//setInterval(networkCycle, 1000);
 	})
 }
