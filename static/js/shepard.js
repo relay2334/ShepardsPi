@@ -249,9 +249,9 @@ function display() {
 	})
 
 
-	//socket.on('protocols', function(data){
-	//	protoRefresh();
-	//})
+	socket.on('protocols', function(data){
+		protoRefresh();
+	})
 
 	//socket.on('hosts', function(host) {
 	//	hosts.push(host);
@@ -280,7 +280,7 @@ function display() {
 		//	networks = network_list;
 		//	renderNetworkList();
 		//});
-		//protoRefresh();
+		protoRefresh();
 		//setInterval(accountCycle, 1000);
 		//setInterval(hostCycle, 1000);
 		//setInterval(networkCycle, 1000);
