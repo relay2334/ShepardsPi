@@ -1,7 +1,7 @@
 {
 	"WebUI": {
 		"title": "ShepardsPi",
-		"version": "0.0.3",
+		"version": "0.0.6",
 		"slogan": "Digital Cloak"
 	},
 	"Hotspot": {
@@ -22,7 +22,8 @@
 		"images": "images"
 	},
 	"Monitoring": {
-		"interface": "wlo1",
+		"MoniterInterface": "wlo1",
+		"PromiscuousInterface": "wlo1",
 		"Driftnet": {
 			"autostart": false,
 			"tmp": "/tmp/ShepardsPi/driftnet",
@@ -35,18 +36,15 @@
 			"autostart": true,
 			"nsfw_filter": true
 		},
-		"Airmon": {
-			"interface": "wlan1",
-			"autostart": false,
-			"interval": 5
+		"MoniterTShark": {
+			"autostart": true
 		},
 		"Ettercap": {
 			"autostart": true
 		},
-		"Nmap": {
+		"p0f": {
 			"autostart": true,
-			"interval": 30000,
-			"target_range": "192.168.1.0-100"
+			"APISocket": "/tmp/p0fSock"
 		}
 	}
 }

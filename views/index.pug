@@ -3,7 +3,7 @@
 - var title3 = "Wireless Networks"
 - var title4 = "Network Statistics"
 - var title5 = "Sniffed Images"
-- var title6 = "External Profile (OSINT)"
+- var title6 = "Custom Protocols"
 
 head
   script(src='/static/js/jquery.min.js')
@@ -25,12 +25,12 @@ body
   ul.sidebar
     li Shepards Pi Settings
     li Parser Settings
-    li Toggle #{title1}
-    li Toggle #{title2}
-    li Toggle #{title3}
-    li Toggle #{title4}
-    li Toggle #{title5} 
-    li Toggle #{title6}
+    li(onclick="$('#gs1').toggle();") Toggle #{title1}
+    li(onclick="$('#gs2').toggle();") Toggle #{title2}
+    li(onclick="$('#gs3').toggle();") Toggle #{title3}
+    li(onclick="$('#gs4').toggle();") Toggle #{title4}
+    li(onclick="$('#gs5').toggle();") Toggle #{title5}
+    li(onclick="$('#gs6').toggle();") Toggle #{title6}
   input#sidebar-btn.sidebar-btn(type='checkbox' unchecked)
   label(for='sidebar-btn')
   
