@@ -33,14 +33,14 @@ body
           .if-title Monitoring Interface:
           .h3 Currently listening on: #{monIF}
           .label(for='Monitor-If') Monitoring Interface:
-          select(name='dropDown', id='Monitor-If')
+          select(name='MonitorIf', id='MonitorIf')
               each intf in interface
                   option=intf
         .col-md-6.form-group
           .if-title Promiscuous Interface:
           .h3 Currently Capturing on: #{promIF}
           .label(for='Promiscuous-If') Promiscuous Interface: 
-          select(name='dropDown', id='Promiscuous-If')
+          select(name='PromiscuousIf', id='PromiscuousIf')
               each intf in interface
                   option=intf
         .subBtn

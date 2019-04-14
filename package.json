@@ -11,6 +11,7 @@
   "dependencies": {
     "async": "latest",
     "base64-img": "latest",
+    "body-parser": "latest",
     "config": "latest",
     "express": "^4.16.4",
     "flot": "^3.0.1",
