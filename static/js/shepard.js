@@ -96,7 +96,11 @@ function displayHost(host, clip=true) {
 	$('#network-hosts > tbody').append(
 		'<tr class="host-entry"><td>' +
 		S(host.ip || '').escapeHTML() 	+ '</td><td>' +
-		S(host.ports || '').escapeHTML() 	+ '</td></tr>'
+		S(host.os || '').escapeHTML()   + '</td><td>' +
+		S(host.distance || '').escapeHTML()   + '</td><td>' +
+		S(host.flows || '').escapeHTML()   + '</td><td>' +
+		S(host.httpSoft || '').escapeHTML()   + '</td><td>' +
+		S(host.firstSeen || '').escapeHTML() 	+ '</td></tr>'
 	);
 }
 
@@ -282,7 +286,7 @@ function display() {
 		//});
 		protoRefresh();
 		setInterval(accountCycle, 1000);
-		//setInterval(hostCycle, 1000);
+		setInterval(hostCycle, 1000);
 		//setInterval(networkCycle, 1000);
 	})
 }

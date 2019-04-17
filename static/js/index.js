@@ -16,16 +16,15 @@ $(function() {
                         };
                     }, this);
                     $('#saved-data').val(JSON.stringify(this.serializedData, null, '    '));
-                    
                     if (typeof(Storage) !== "undefined") {
                       localStorage.setItem("dashboard", JSON.stringify(this.serializedData));
-                      
+
                     } else {
                         alert("Sorry, your browser does not support Web Storage!");
                     }
-                                                     
+
                     return false;
-                    
+
                 }.bind(this);
 
 //serialization: https://codepen.io/frommichael/pen/vmXXLV
