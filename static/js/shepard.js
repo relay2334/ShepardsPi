@@ -61,13 +61,38 @@ function protoRefresh(reporting = false) {
 	var url = '/stats/protocols/5'
 	if (reporting) {url = '/stats/protoreport/10'}
 	$.getJSON(url, function(protos) {
-		$.plot('#proto-analysis', protos, 
+		$.plot('#proto-analysis', protos,
 			{xaxis: { mode: "time", position: "right", timezone: "browser"},
 			legend: {position: "nw", backgroundColor: null, backgroundOpacity: 0}
 		});
 	})
 }
 
+function customProtoOne(reporting = false) {
+	// Get the top 5 protocols from the API and then generate the flot graph
+	// based on the data returned.
+	var url = '/proto/arp/5'
+	if (reporting) {url = '/proto/arp/10'}
+	$.getJSON(url, function(protos) {
+		$.plot('#custom-one', protos,
+			{xaxis: { mode: "time", position: "right", timezone: "browser"},
+			legend: {position: "nw", backgroundColor: null, backgroundOpacity: 0}
+		});
+	})
+}
+
+function customProtoTwo(reporting = false) {
+	// Get the top 5 protocols from the API and then generate the flot graph
+	// based on the data returned.
+	var url = '/proto/dns/5'
+	if (reporting) {url = '/proto/dns/10'}
+	$.getJSON(url, function(protos) {
+		$.plot('#custom-two', protos,
+			{xaxis: { mode: "time", position: "right", timezone: "browser"},
+			legend: {position: "nw", backgroundColor: null, backgroundOpacity: 0}
+		});
+	})
+}
 
 function protoList() {
 	$.getJSON('/stats/protolist', function(protos) {
@@ -151,7 +176,7 @@ function accountCycle() {
 		account_id++;
 
 		// If the account_id counter exceeds the number of elements in the
-		// accounts array, then we will need to rotate the id to the 
+		// accounts array, then we will need to rotate the id to the
 		// beginning of the array.
 		if (account_id > accounts.length - 1) {
 			account_id = account_id - accounts.length;
@@ -174,7 +199,7 @@ function hostCycle() {
 		host_id++;
 
 		// If the account_id counter exceeds the number of elements in the
-		// accounts array, then we will need to rotate the id to the 
+		// accounts array, then we will need to rotate the id to the
 		// beginning of the array.
 		if (host_id > hosts.length - 1) {
 			host_id = host_id - hosts.length;
@@ -197,7 +222,7 @@ function networkCycle() {
 		network_id++;
 
 		// If the account_id counter exceeds the number of elements in the
-		// accounts array, then we will need to rotate the id to the 
+		// accounts array, then we will need to rotate the id to the
 		// beginning of the array.
 		if (network_id > networks.length - 1) {
 			network_id = network_id - networks.length;
@@ -238,14 +263,16 @@ function report() {
 			})
 		});
 		protoRefresh(true);
+		customProtoOne();
+		customProtoTwo();
 	})
 }
 
 
 function display() {
-	//socket.on('images', function(image) {
-	//	addImage(image);
-	//})
+	socket.on('images', function(image) {
+		addImage(image);
+	})
 
 
 	socket.on('accounts', function(account) {
@@ -260,18 +287,18 @@ function display() {
 	socket.on('hosts', function(host) {
 		hosts.push(host);
 	})
-	
-	//socket.on('networks', function(network) {
-	//	networks.push(network);
-	//})
+
+	socket.on('networks', function(network) {
+		networks.push(network);
+	})
 
 
 	$(document).ready(function () {
-		//$.getJSON('/images/list', function(images) {
-		//	$.each(images, function(key, image) {
-		//		addImage(image);
-		//	})
-		//});
+		$.getJSON('/images/list', function(images) {
+			$.each(images, function(key, image) {
+				addImage(image);
+			})
+		});
 		$.getJSON('/accounts/list', function(account_list) {
 			accounts = account_list;
 			renderAccountList();
@@ -280,14 +307,15 @@ function display() {
 			hosts = host_list;
 			renderHostList();
 		});
-		//$.getJSON('/networks/list', function(network_list) {
-		//	networks = network_list;
-		//	renderNetworkList();
-		//});
+		$.getJSON('/networks/list', function(network_list) {
+			networks = network_list;
+			renderNetworkList();
+		});
 		protoRefresh();
+		customProtoOne();
+		customProtoTwo();
 		setInterval(accountCycle, 1000);
 		setInterval(hostCycle, 1000);
-		//setInterval(networkCycle, 1000);
+		setInterval(networkCycle, 1000);
 	})
 }
-

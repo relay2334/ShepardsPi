@@ -22,7 +22,7 @@
 		"images": "images"
 	},
 	"Monitoring": {
-		"MoniterInterface": "wlo1",
+		"MoniterInterface": "awus036",
 		"PromiscuousInterface": "wlo1",
 		"Driftnet": {
 			"autostart": false,
@@ -37,13 +37,13 @@
 			"nsfw_filter": true
 		},
 		"MoniterTShark": {
-			"autostart": true
+			"autostart": false
 		},
 		"Ettercap": {
 			"autostart": true
 		},
 		"p0f": {
-			"autostart": true,
+			"autostart": false,
 			"APISocket": "/tmp/p0fSock"
 		}
 	}
