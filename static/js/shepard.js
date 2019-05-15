@@ -41,7 +41,6 @@ function removeImage(filename) {
 	}
 }
 
-
 function addHost(host) {
 	hosts.push(host);
 }

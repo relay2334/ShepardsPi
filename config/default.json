@@ -37,13 +37,13 @@
 			"nsfw_filter": true
 		},
 		"MoniterTShark": {
-			"autostart": false
+			"autostart": true
 		},
 		"Ettercap": {
 			"autostart": true
 		},
 		"p0f": {
-			"autostart": false,
+			"autostart": true,
 			"APISocket": "/tmp/p0fSock"
 		}
 	}
