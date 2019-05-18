@@ -10,6 +10,14 @@
   min-width: 100%;
 }
 
+#wrapper.container {
+  background: #00142C;
+}
+
+#images-wrapper.container {
+  background: #00142C;
+}
+
 
 #proto-analysis {
         height: 200px;

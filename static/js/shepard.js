@@ -66,7 +66,7 @@ function protoRefresh(reporting = false) {
 		});
 	})
 }
-/*
+
 function customProtoOne(reporting = false) {
 	// Get the top 5 protocols from the API and then generate the flot graph
 	// based on the data returned.
@@ -92,7 +92,7 @@ function customProtoTwo(reporting = false) {
 		});
 	})
 }
-*/
+
 function protoList() {
 	$.getJSON('/stats/protolist', function(protos) {
 		$.each(protos, function(key, proto) {
@@ -311,8 +311,8 @@ function display() {
 			renderNetworkList();
 		});
 		protoRefresh();
-		//customProtoOne();
-		//customProtoTwo();
+		customProtoOne();
+		customProtoTwo();
 		setInterval(accountCycle, 1000);
 		setInterval(hostCycle, 1000);
 		setInterval(networkCycle, 1000);
