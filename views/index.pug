@@ -47,8 +47,13 @@ body
             .panel
               .panel-title #{title1}
               .panel-body
+                table#headers.table
                 table#accounts-list.table
                   tbody
+                    td Username
+                    td Password
+                    td Protocol
+                    td Host
         .grid-stack-item#gs2(data-gs-x=E2.x data-gs-y=E2.y data-gs-width=E2.w data-gs-height=E2.h)
           .grid-stack-item-content
             .panel
@@ -56,6 +61,12 @@ body
               .panel-body
                 table#network-hosts.table
                   tbody
+                    td IP
+                    td OS
+                    td Distance
+                    td Flows
+                    td Http Software
+                    td First Seen
         .grid-stack-item#gs3(data-gs-x=E3.x data-gs-y=E3.y data-gs-width=E3.w data-gs-height=E3.h)
           .grid-stack-item-content
             .panel
@@ -63,6 +74,11 @@ body
               .panel-body
                 table#networks-list.table
                   tbody
+                    td ESSID
+                    td Auth
+                    td BSSID
+                    td Channel
+                    td Power
         .grid-stack-item#gs4(data-gs-x=E4.x data-gs-y=E4.y data-gs-width=E4.w data-gs-height=E4.h)
           .grid-stack-item-content
             .panel

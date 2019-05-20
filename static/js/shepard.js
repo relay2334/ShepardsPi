@@ -72,8 +72,8 @@ function customProtoOne(reporting = false) {
 	// based on the data returned.
 	var url = '/proto/arp/5'
 	if (reporting) {url = '/proto/arp/10'}
-	$.getJSON(url, function(protos) {
-		$.plot('#custom-one', protos,
+	$.getJSON(url, function(protos1) {
+		$.plot('#custom-one', protos1,
 			{xaxis: { mode: "time", position: "right", timezone: "browser"},
 			legend: {position: "nw", backgroundColor: null, backgroundOpacity: 0}
 		});
@@ -85,8 +85,8 @@ function customProtoTwo(reporting = false) {
 	// based on the data returned.
 	var url = '/proto/dns/5'
 	if (reporting) {url = '/proto/dns/10'}
-	$.getJSON(url, function(protos) {
-		$.plot('#custom-two', protos,
+	$.getJSON(url, function(protos2) {
+		$.plot('#custom-two', protos2,
 			{xaxis: { mode: "time", position: "right", timezone: "browser"},
 			legend: {position: "nw", backgroundColor: null, backgroundOpacity: 0}
 		});
@@ -110,7 +110,7 @@ function displayAccount(account, clip=true) {
 		S(account.username || '').escapeHTML().substring(0,15) 	+ '</td><td>' +
 		S(account.password || '').escapeHTML().substring(0,15) 	+ '</td><td>' +
 		S(account.protocol || '').escapeHTML() 					+ '</td><td>' +
-		S(account.dns || '').escapeHTML().substring(0,15) 		+ '</td></tr>'
+		S(account.host || '').escapeHTML().substring(0,15) 		+ '</td></tr>'
 	);
 }
 
@@ -281,6 +281,8 @@ function display() {
 
 	socket.on('protocols', function(data){
 		protoRefresh();
+		customProtoOne();
+                customProtoTwo();
 	})
 
 	socket.on('hosts', function(host) {
