@@ -27,17 +27,17 @@
 		"Driftnet": {
 			"autostart": false,
 			"tmp": "/tmp/ShepardsPi/driftnet",
-			"nsfw_filter": true
+			"nsfw_filter": false
 		},
 		"TShark": {
 			"autostart": true
 		},
 		"NGrep": {
 			"autostart": true,
-			"nsfw_filter": true
+			"nsfw_filter": false
 		},
 		"MoniterTShark": {
-			"autostart": true
+			"autostart": false
 		},
 		"Ettercap": {
 			"autostart": true

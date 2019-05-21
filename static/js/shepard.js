@@ -6,6 +6,9 @@ var account_id = null;
 var network_id = null;
 var socket = io();
 var flagged_images = [];
+var acctScroll = true;
+var hostsScroll = true;
+var netScroll = true;
 
 
 function addImage(image) {
@@ -166,7 +169,7 @@ function renderNetworkList() {
 }
 
 function accountCycle() {
-	if (accounts.length > 10) {
+	if (accounts.length > 10 && Boolean(acctScroll)) {
 		// If this is the first time the accounts have gone above 5, then we will
 		// need to set the initial value.
 		if (account_id == null) {account_id = 10;}
@@ -191,7 +194,7 @@ function accountCycle() {
 }
 
 function hostCycle() {
-	if (hosts.length > 10) {
+	if (hosts.length > 10 && Boolean(hostsScroll)) {
 		if (host_id == null) {host_id = 10;}
 
 		// Increment the account_id counter.
@@ -214,7 +217,7 @@ function hostCycle() {
 }
 
 function networkCycle() {
-	if (networks.length > 10) {
+	if (networks.length > 10 && Boolean(netScroll)) {
 		if (network_id == null) {network_id = 10;}
 
 		// Increment the account_id counter.

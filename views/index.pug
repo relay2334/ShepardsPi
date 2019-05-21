@@ -45,61 +45,58 @@ body
         .grid-stack-item#gs1(data-gs-x=E1.x data-gs-y=E1.y data-gs-width=E1.w data-gs-height=E1.h)
           .grid-stack-item-content
             .panel
-              .panel-title #{title1}
+              .panel-header(onclick="acctScroll = !acctScroll") #{title1}
               .panel-body
-                table#headers.table
                 table#accounts-list.table
+                  th Username
+                  th Password
+                  th Protocol
+                  th Host
                   tbody
-                    td Username
-                    td Password
-                    td Protocol
-                    td Host
         .grid-stack-item#gs2(data-gs-x=E2.x data-gs-y=E2.y data-gs-width=E2.w data-gs-height=E2.h)
           .grid-stack-item-content
             .panel
-              .panel-title #{title2}
+              .panel-header(onclick="hostsScroll = !hostsScroll") #{title2}
               .panel-body
                 table#network-hosts.table
+                  th IP
+                  th OS
+                  th Distance
+                  th Flows
+                  th Http Software
+                  th First Seen
                   tbody
-                    td IP
-                    td OS
-                    td Distance
-                    td Flows
-                    td Http Software
-                    td First Seen
         .grid-stack-item#gs3(data-gs-x=E3.x data-gs-y=E3.y data-gs-width=E3.w data-gs-height=E3.h)
           .grid-stack-item-content
             .panel
-              .panel-title #{title3}
+              .panel-header(onclick="netScroll = !netScroll") #{title3}
               .panel-body
                 table#networks-list.table
+                  th ESSID
+                  th Auth
+                  th BSSID
+                  th Power
+                  th Channel
                   tbody
-                    td ESSID
-                    td Auth
-                    td BSSID
-                    td Channel
-                    td Power
         .grid-stack-item#gs4(data-gs-x=E4.x data-gs-y=E4.y data-gs-width=E4.w data-gs-height=E4.h)
           .grid-stack-item-content
             .panel
-              .panel-title #{title4}
+              .panel-header #{title4}
               .panel-body
                 #proto-analysis
 
         .grid-stack-item#gs5(data-gs-x=E5.x data-gs-y=E5.y data-gs-width=E5.w data-gs-height=E5.h)
           .grid-stack-item-content
             .panel
-              .panel-title #{title5}
+              .panel-header #{title5}
               .panel-body
-                div#wrapper.container
-                  div#images-wrapper.container
-                    div.container-fluid
-                      div#images
-
+                div.container-images 
+                .col-md-2
+                  div#images
         .grid-stack-item#gs6(data-gs-x="4" data-gs-y="5" data-gs-width="4" data-gs-height="5")
           .grid-stack-item-content
             .panel
-              .panel-title #{title6}
+              .panel-header #{title6}
               .panel-body
                 .col-md-6
                   #custom-one

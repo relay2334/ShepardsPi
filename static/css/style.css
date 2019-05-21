@@ -10,14 +10,10 @@
   min-width: 100%;
 }
 
-#wrapper.container {
+.container-images {
   background: #00142C;
+  padding: 4em;
 }
-
-#images-wrapper.container {
-  background: #00142C;
-}
-
 
 #proto-analysis {
         height: 200px;
@@ -72,10 +68,10 @@ body {
   box-shadow: none;
 }
 
-.panel-title {
+.panel-header {
   color: white;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -83,6 +79,12 @@ body {
   color: white;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   text-align: center;
+}
+
+th {
+        color: white;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
 }
 
 td {
