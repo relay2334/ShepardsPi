@@ -48,10 +48,11 @@ body
               .panel-header(onclick="acctScroll = !acctScroll") #{title1}
               .panel-body
                 table#accounts-list.table
-                  th Username
-                  th Password
-                  th Protocol
-                  th Host
+                  thead
+                    th Username
+                    th Password
+                    th Protocol
+                    th Host
                   tbody
         .grid-stack-item#gs2(data-gs-x=E2.x data-gs-y=E2.y data-gs-width=E2.w data-gs-height=E2.h)
           .grid-stack-item-content
@@ -59,12 +60,13 @@ body
               .panel-header(onclick="hostsScroll = !hostsScroll") #{title2}
               .panel-body
                 table#network-hosts.table
-                  th IP
-                  th OS
-                  th Distance
-                  th Flows
-                  th Http Software
-                  th First Seen
+                  thead
+                    th IP
+                    th OS
+                    th Distance
+                    th Flows
+                    th Http Software
+                    th First Seen
                   tbody
         .grid-stack-item#gs3(data-gs-x=E3.x data-gs-y=E3.y data-gs-width=E3.w data-gs-height=E3.h)
           .grid-stack-item-content
@@ -72,11 +74,12 @@ body
               .panel-header(onclick="netScroll = !netScroll") #{title3}
               .panel-body
                 table#networks-list.table
-                  th ESSID
-                  th Auth
-                  th BSSID
-                  th Power
-                  th Channel
+                  thead
+                    th ESSID
+                    th Auth
+                    th BSSID
+                    th Power
+                    th Channel
                   tbody
         .grid-stack-item#gs4(data-gs-x=E4.x data-gs-y=E4.y data-gs-width=E4.w data-gs-height=E4.h)
           .grid-stack-item-content
@@ -90,7 +93,7 @@ body
             .panel
               .panel-header #{title5}
               .panel-body
-                div.container-images 
+                div.container-images
                 .col-md-2
                   div#images
         .grid-stack-item#gs6(data-gs-x="4" data-gs-y="5" data-gs-width="4" data-gs-height="5")
