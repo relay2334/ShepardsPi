@@ -136,7 +136,7 @@ function displayNetwork(network, clip=true) {
 
 	$('#networks-list > tbody').append(
 		'<tr class="network-entry"><td>' +
-		S(network.essid || '').escapeHTML().substring(0,15) 	+ '</td><td>' +
+		S(network.essid || '').escapeHTML() 	+ '</td><td>' +
 		S(network.auth || '').escapeHTML() 			+ '</td><td>' +
 		S(network.bssid || '').escapeHTML() 			+ '</td><td>' +
 		S(network.power || '').escapeHTML() 			+ '</td><td>' +

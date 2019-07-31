@@ -20,7 +20,7 @@ body
     li(onclick="location.href='/control'") Parser Settings
   input#sidebar-btn.sidebar-btn(type='checkbox' unchecked)
   label(for='sidebar-btn')
-  
+
   .container
     .row
       .col-sm-12
@@ -28,54 +28,79 @@ body
         .h5 v#{version} | Shepards Pi | Network analysis tool
         img#icon(src="https://bit.ly/2SVHA7O")
     .row
-      form(action='/interfaces' method="post")
-        .col-md-6.form-group
-          .if-title Monitoring Interface:
-          .h3 Currently listening on: #{monIF}
-          .label(for='Monitor-If') Monitoring Interface:
-          select(name='MonitorIf', id='MonitorIf')
-              each intf in interface
-                  option=intf
-        .col-md-6.form-group
-          .if-title Promiscuous Interface:
-          .h3 Currently Capturing on: #{promIF}
-          .label(for='Promiscuous-If') Promiscuous Interface: 
-          select(name='PromiscuousIf', id='PromiscuousIf')
-              each intf in interface
-                  option=intf
-        .subBtn
-          input.sub(type='submit', value='Save Config')
-
-    .row
-      br
-      br
-      .section-title Parser Control:
-      form(action='/parsers' method="post")
-        row
-          .col-md-6
-            .col-sm-1
-              .circle.off
-            .col-sm-3  
-              .label #{parser1}
-              input(type='checkbox', name=parser1)
-          .col-md-6
-            .col-sm-1
-              .circle.on
-            .col-sm-3
-              .label #{parser2}
-              input(type='checkbox', name=parser2)
-        row
-          .col-md-6
-            .col-sm-1
-              .circle.on
-            .col-sm-3
-              .label.parser #{parser3}
-              input.parser(type='checkbox', name=parser3)
-          .col-md-6
-            .col-sm-1
-              .circle.on
-            .col-sm-3
-              .label #{parser4}
-              input(type='checkbox', name=parser4)
-        .subBtn
-          input.sub(type='submit', value='Save Config')
+    for i in interface
+      .row
+        form(action='/'+i.name+'/parsers' method="post")
+          .ifstart
+            .if-title Interface Name: #{i.name}
+            .col-md-6
+              if i.connected
+                .if-subtitle Connected!
+                if i.wireless
+                  .if-data NIC type: Wireless
+                else
+                  .if-data NIC type: Wired
+                .if-data IP is: #{i.ip}
+                .if-data Broadcast: #{i.brd}
+              else
+                .if-subtitle Not Connected!
+                if i.wireless
+                  .if-data NIC type: Wireless
+                else
+                  .if-data NIC type: Wired
+            if i.wireless
+              .col-md-6
+                row
+                  .if-subtitle Wireless Parsers:
+                  .col-sm-2
+                    label.switch
+                      input(type='checkbox' name='TSharkmon')
+                      span.slider.round
+                  .col-sm-2
+                    .if-parsers TShark
+            if i.connected
+              .col-md-6
+                row
+                  .if-subtitle Network Parsers:
+                  row
+                    .col-md-6
+                      .col-sm-4
+                        label.switch
+                          input(type='checkbox' name='p0f')
+                          span.slider.round
+                      .col-sm-2
+                        .if-parsers p0f
+                    .col-md-6
+                      .col-sm-4
+                        label.switch
+                          input(type='checkbox' name='Ettercap')
+                          span.slider.round
+                      .col-sm-2
+                        .if-parsers Ettercap
+                  row
+                    .col-md-6
+                      .col-sm-4
+                        label.switch
+                          input(type='checkbox' name='Driftnet')
+                          span.slider.round
+                      .col-sm-2
+                        .if-parsers Driftnet
+                    .col-md-6
+                      .col-sm-4
+                        label.switch
+                          input(type='checkbox' name='TShark')
+                          span.slider.round
+                      .col-sm-2
+                        .if-parsers TShark
+                  row
+                  .col-md-6
+                    .col-sm-4
+                      label.switch
+                        input(type='checkbox' name='NGrep')
+                        span.slider.round
+                    .col-sm-2
+                      .if-parsers NGrep
+                  row
+                  .subBtn
+                    input.sub(type='submit', value='Save Config')
+      hr

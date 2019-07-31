@@ -1,0 +1,12 @@
+[Unit]
+Description=Shepard Service
+After=mariadb.service
+
+[Service]
+Restart=always
+WorkingDirectory=/home/shepard/ShepardsPi
+Environment=NODE_ENV=production
+ExecStart=/root/.nvm/current/bin/node /home/shepard/ShepardsPi/server.js
+
+[Install]
+WantedBy=multi-user.target
