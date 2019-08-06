@@ -100,7 +100,8 @@ body
                         span.slider.round
                     .col-sm-2
                       .if-parsers NGrep
-                  row
-                  .subBtn
-                    input.sub(type='submit', value='Save Config')
+            if i.connected || i.wireless
+              row
+                .subBtn
+                  input.sub(type='submit', value='Save Config')
       hr

@@ -12,7 +12,6 @@ done
 
 for iface in ${array[@]}
 do
-
   status="$(ethtool $iface 2>/dev/null | gawk 'match($0, /Link detected: (.*)$/, a) {print a[1]}')"
   if [ "$status" == "no" ]
   then
@@ -32,6 +31,11 @@ do
   if [ "$wire" == "IEEE 802.11" ]
   then
     wireless='1'
+    mode="$(iwconfig $iface 2>/dev/null | awk 'match($0, /Mode:(.*)  Fre/, a) {print a[1]}')"
+    if [ "$mode" == "Monitor" ]
+    then
+      status='0'
+    fi
   else
     wireless='0'
   fi
