@@ -13,7 +13,7 @@
     "base64-img": "latest",
     "body-parser": "latest",
     "config": "latest",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "flot": "^3.0.1",
     "httpreq": "latest",
     "md5": "latest",
